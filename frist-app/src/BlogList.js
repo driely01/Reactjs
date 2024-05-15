@@ -7,11 +7,11 @@ const BlogList = ({blogs, title, handleDelete}) => {
 			{blogs.map((blog) => (
 				<div className="blog-preview" key={blog.id}>
 					<Link className="links-react" to={`/blogs/${blog.id}`} >
-						<h2>{blog.title}</h2>
+						<h2 className="underline">{blog.title}</h2>
 					</Link>
-					<p className="blog-author">Written by <span>{blog.author}</span></p>
-					<p className="blog-body">{blog.body}</p>
-					<button onClick={() => handleDelete(blog.id)}>delete blog</button>
+					<p className="blog-author">Written by <span className="underline">{blog.author}</span></p>
+					<p className="blog-body">{`${(blog.body).slice(0, 400)}...`}</p>
+					{/* <button onClick={() => handleDelete(blog.id)}>delete blog</button> */}
 				</div>
 			))}
 		</div>
