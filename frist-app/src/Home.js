@@ -4,7 +4,7 @@ import useFetch from './useFetch';
 
 const Home = () => {
 	const {data: blogs, setData:setBlogs, isPending, error} = useFetch('http://localhost:8000/blogs');
-	const handleDelete = (id) => {
+	const handleDelete = (id) => { // delete a blog **locally** 
 		const newBlogs = blogs.filter(data => data.id !== id)
 		setBlogs(newBlogs);
 	};
