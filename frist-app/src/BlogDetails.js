@@ -11,7 +11,11 @@ const BlogDetails = () => {
 			{error && <div>{error}</div>}
 			{blog && (
 				<article className="blog-preview center-item blog-detail">
-					<h2 className="underline center-item">{blog.title}</h2>
+					<div className="title">
+						<div className="left"></div>
+						<h2 className="p-10">{blog.title}</h2>
+						<div className="right"></div>
+					</div>
 					<p className="blog-body justified">{blog.body}</p>
 					<p className="blog-author right-side"><span className="underline">{blog.author}</span></p>
 				</article>
