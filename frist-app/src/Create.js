@@ -4,6 +4,23 @@ const Create = () => {
 	const [title, setTitle] = useState('');
 	const [body, setBody] = useState('');
 	const [author, setAuthor] = useState('mario');
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const blog = {title, body, author};
+		fetch('http://localhost:8000/blogs', {
+			method: 'POST',
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(blog)
+		})
+		.then((res) => {
+			if (!res.ok)
+				throw Error('could not reach the db');
+		})
+		.catch((err) => alert(err.message))
+		setAuthor('');
+		setTitle('');
+		setBody('');
+	};
 	return (
 		<div className="create">
 			<div className="title add-blog">
@@ -11,7 +28,7 @@ const Create = () => {
 				<h2 className="p-10">add a new blog</h2>
 				<div className="right"></div>
 			</div>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<label>blog Title: </label>
 				<input
 					type="text"
