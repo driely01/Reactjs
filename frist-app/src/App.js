@@ -4,10 +4,12 @@ import Create from './Create';
 import BlogDetails from './BlogDetails';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'; 
 import NotFound from './NotFound';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
 	return (
 		<Router>
+			<Toaster />
 			<div className="App">
 				<Navbar />
 				<div className="content">

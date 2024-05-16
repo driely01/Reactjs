@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const Create = () => {
 	const [title, setTitle] = useState('');
@@ -7,6 +8,14 @@ const Create = () => {
 	const [author, setAuthor] = useState('mario');
 	const [isPending, setIsPending] = useState(false);
 	const history = useHistory();
+	const notify = {
+		duration: 2000,
+		position: 'bottom-right',
+		style: {
+			background: '#f1356d',
+			color: '#ffffff'
+		}
+	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		const blog = {title, body, author};
@@ -18,11 +27,12 @@ const Create = () => {
 		})
 		.then((res) => {
 			if (!res.ok)
-				throw Error('could not reach the db');
+				throw Error('ERROR: could not reach the db');
+			toast.success('blog has been added successfully', notify);
 			setIsPending(false);
 			history.push('/');
 		})
-		.catch((err) => alert(err.message))
+		.catch((err) => toast.error(err.message, notify))
 	};
 	return (
 		<div className="create">
