@@ -20,6 +20,7 @@
 .navbar h1 {
 	color: #f1356d;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 .navbar .links {
 	margin-left: auto;
@@ -62,10 +63,11 @@
 	padding: 10px 15px;
 	margin: 10px 0 20px 0;
 	border: 1px solid #eeeeee;
-	transition: all 200ms ease-in-out;
+	transition: .3s;
 }
 .blog-preview:hover {
-	box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+	box-shadow: 3px 3px 5px rgba(113, 113, 113, 0.3);
+	transform: scale(1.02);
 }
 .links-react {
 	text-decoration: none;
@@ -91,8 +93,9 @@
 }
 .blog-preview .blog-body {
 	padding: 15px 10px;
-	font-size: 15px;
+	font-size: 16px;
 	text-align: left;
+	letter-spacing: 1.25px;
 }
 button {
 	padding: 10px 15px;
@@ -128,13 +131,14 @@ button:hover {
 	text-align: right;
 	margin-right: 5px;
 }
-.center-item:hover { box-shadow: none; }
+.center-item:hover { box-shadow: none; transform: none; }
 .blog-detail {
 	border: none;
 	box-shadow: none;
 	margin: 0;
 	padding: 0;
 }
+
 .justified { border-bottom: 1px solid #f2f2f2; }
 .p-10 { padding: 0 10px; color: #f1356d; }
 

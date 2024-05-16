@@ -1,26 +1,20 @@
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams, useHistory } from 'react-router-dom';
 import useFetch from './useFetch';
 import Loading from "./Loading";
-import { useEffect } from "react";
 
 const BlogDetails = () => {
 	const {id} = useParams();
-	const {data: blog, setData: setBlog, error, isPending, setIsPending} = useFetch(`http://localhost:8000/blogs/${id}`);
+	const {data: blog, error, isPending} = useFetch(`http://localhost:8000/blogs/${id}`);
+	const history = useHistory();
 	const handleDelete = () => {
-		fetch(`http://localhost:8000/blogs/${id}`, {
-			method: 'DELETE'
-		})
-		.then((res) => {
-			if (!res.ok)
-				throw Error('could not reach the db');
-			setBlog(null);
-			setIsPending(true);
-		})
-		.catch((err) => alert(err.message))
+		fetch(`http://localhost:8000/blogs/${id}`, { method: 'DELETE' })
+			.then((res) => {
+				if (!res.ok)
+					throw Error('could not reach the db');
+				history.push('/');
+			})
+			.catch((err) => alert(err.message))
 	};
-	useEffect(() => {
-		fetch(`http://localhost:8000/blogs/${id}`)
-	}, [id]);
 	return (
 		<div className="blog-details">
 			{isPending && <Loading />}

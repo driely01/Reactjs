@@ -13,8 +13,7 @@ const BlogList = ({blogs, title, handleDelete}) => {
 						<h2 className="underline">{blog.title}</h2>
 					</Link>
 					<p className="blog-author">Written by <span className="underline">{blog.author}</span></p>
-					<p className="blog-body">{`${(blog.body).slice(0, 400)}...`}</p>
-					{/* <button onClick={() => handleDelete(blog.id)}>delete blog</button> */}
+					<p className="blog-body">{`${(blog.body).slice(0, 200)}...`}</p>
 				</div>
 			))}
 		</div>
