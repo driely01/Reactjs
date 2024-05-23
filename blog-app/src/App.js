@@ -5,6 +5,7 @@ import BlogDetails from './BlogDetails';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'; 
 import NotFound from './NotFound';
 import { Toaster } from 'react-hot-toast';
+import Author from './Author'
 
 function App() {
 	return (
@@ -22,6 +23,9 @@ function App() {
 						</Route>
 						<Route path="/blogs/:id">
 							<BlogDetails />
+						</Route>
+						<Route path="/authors/:id">
+							<Author />
 						</Route>
 						<Route path="*">
 							<NotFound />

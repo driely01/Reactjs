@@ -1,0 +1,43 @@
+.author {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+}
+.profile-container {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 20px;
+}
+.profile-container .profile {
+	width: 200px;
+	height: 200px;
+	background-color: black;
+	border-radius: 50%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+.profile-container .author-infos {
+	flex-grow: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.profile-container .author-infos h2 {
+	margin-bottom: 10px;
+}
+.author-search {
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+	padding: 0 10px;
+}
+.author-search .search-btn { margin: 0; }
+.author-search input {
+	padding: 10px;
+	outline: none;
+	font-size: 18px;
+	border: 1px solid #f1356d;
+	border-radius: 5px;
+	flex-grow: 1;
+}
