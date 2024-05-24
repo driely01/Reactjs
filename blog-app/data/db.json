@@ -30,5 +30,31 @@
       "body": "Several cases have been brought before the national courts against bloggers concerning issues of defamation or liability. U.S. payouts related to blogging totalled $17.4 million by 2009; in some cases these have been covered by umbrella insurance.[55] The courts have returned with mixed verdicts. Internet Service Providers (ISPs), in general, are immune from liability for information that originates with third parties (U.S. Communications Decency Act and the EU Directive 2000/31/EC). In Doe v. Cahill, the Delaware Supreme Court held that stringent standards had to be met to unmask the anonymous bloggers and also took the unusual step of dismissing the libel case itself (as unfounded under American libel law) rather than referring it back to the trial court for reconsideration.[56] In a bizarre twist, the Cahills were able to obtain the identity of John Doe, who turned out to be the person they suspected: the town's mayor, Councilman Cahill's political rival. The Cahills amended their original complaint, and the mayor settled the case rather than going to trial.\n\nIn January 2007, two prominent Malaysian political bloggers, Jeff Ooi and Ahirudin Attan, were sued by a pro-government newspaper, The New Straits Times Press (Malaysia) Berhad, Kalimullah bin Masheerul Hassan, Hishamuddin bin Aun and Brenden John a/l John Pereira over alleged defamation. The plaintiff was supported by the Malaysian government.[57] Following the suit, the Malaysian government proposed to \"register\" all bloggers in Malaysia to better control parties against their interests.[58] This is the first such legal case against bloggers in the country. In the United States, blogger Aaron Wall was sued by Traffic Power for defamation and publication of trade secrets in 2005.[59] According to Wired magazine, Traffic Power had been \"banned from Google for allegedly rigging search engine results.\"[60] Wall and other \"white hat\" search engine optimization consultants had exposed Traffic Power in what they claim was an effort to protect the public. The case was dismissed for lack of personal jurisdiction, and Traffic Power failed to appeal within the allowed time.",
       "author": "mario"
     }
+  ],
+  "authors": [
+    {
+      "name": "john",
+      "lastname": "davis",
+      "discription": "Curabitur accumsan leo a dictum ultricies. Ut massa elit, sagittis vitae bibendum id, congue vitae mi. Mauris vel libero laoreet, fermentum velit non, eleifend orci. Suspendisse quis tempus lectus, et venenatis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a velit id turpis auctor rutrum. Donec tempus rutrum pharetra.",
+      "id": "1"
+    },
+    {
+      "name": "jems",
+      "lastname": "johnson",
+      "discription": "Curabitur accumsan leo a dictum ultricies. Ut massa elit, sagittis vitae bibendum id, congue vitae mi. Mauris vel libero laoreet, fermentum velit non, eleifend orci. Suspendisse quis tempus lectus, et venenatis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a velit id turpis auctor rutrum. Donec tempus rutrum pharetra.",
+      "id": "2"
+    },
+    {
+      "name": "gorgea",
+      "lastname": "garcia",
+      "discription": "Curabitur accumsan leo a dictum ultricies. Ut massa elit, sagittis vitae bibendum id, congue vitae mi. Mauris vel libero laoreet, fermentum velit non, eleifend orci. Suspendisse quis tempus lectus, et venenatis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a velit id turpis auctor rutrum. Donec tempus rutrum pharetra.",
+      "id": "3"
+    },
+    {
+      "name": "mike",
+      "lastname": "smith",
+      "discription": "Curabitur accumsan leo a dictum ultricies. Ut massa elit, sagittis vitae bibendum id, congue vitae mi. Mauris vel libero laoreet, fermentum velit non, eleifend orci. Suspendisse quis tempus lectus, et venenatis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a velit id turpis auctor rutrum. Donec tempus rutrum pharetra.",
+      "id": "4"
+    }
   ]
 }
