@@ -1,6 +1,11 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Blog from "./Blog";
+
 
 const BlogList = ({blogs, title, handleDelete}) => {
+	// const [name, setName] = useState("")
+
 	return (
 		<div className="blog-list">
 			<div className="title">
@@ -8,13 +13,8 @@ const BlogList = ({blogs, title, handleDelete}) => {
 				<div></div>
 			</div>
 			{blogs.map((blog) => (
-				<div className="blog-preview" key={blog.id}>
-					<Link className="links-react" to={`/blogs/${blog.id}`} >
-						<h2 className="underline">{blog.title}</h2>
-					</Link>
-					<p className="blog-author">Written by <span className="underline">{blog.author}</span></p>
-					<p className="blog-body">{`${(blog.body).slice(0, 200)}...`}</p>
-				</div>
+
+				<Blog blog={blog} />
 			))}
 		</div>
 	);
