@@ -21,3 +21,5 @@ to do that need to run the following command
 npx json-server --watch data/db.json --port 8000
 ```
 changed the port to ``8000`` because the default port of ``JSON server`` is ``3000`` which is the same port of ``react server`` ``3000``.
+
+<img width="1432" alt="Screen Shot 2024-05-28 at 5 04 35 PM" src="https://github.com/driely01/Reactjs/assets/41493879/bdc97497-4c57-4b4a-99da-1ec2f10a9cd6">
