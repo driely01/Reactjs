@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
+	margin-bottom: 40px;
 }
 .profile-container {
 	display: grid;
@@ -22,22 +23,8 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
+	align-self: center;
 }
 .profile-container .author-infos h2 {
 	margin-bottom: 10px;
-}
-.author-search {
-	display: flex;
-	flex-direction: row;
-	gap: 20px;
-	padding: 0 10px;
-}
-.author-search .search-btn { margin: 0; }
-.author-search input {
-	padding: 10px;
-	outline: none;
-	font-size: 18px;
-	border: 1px solid #f1356d;
-	border-radius: 5px;
-	flex-grow: 1;
 }

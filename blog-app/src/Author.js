@@ -1,24 +1,44 @@
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 import './author.css'
+import useFetch from './useFetch';
 import BlogList from './BlogList';
 
-const Author = () => {
+function AuthorComponent(props) {
 	return (
 		<div className="author">
 			<div className="profile-container">
 				<div className="profile">
-					<img src="https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+					<img src={props.image} alt="" />
 				</div>
 				<div className="author-infos">
-					<h2>john week</h2>
-					<p>Curabitur accumsan leo a dictum ultricies. Ut massa elit, sagittis vitae bibendum id, congue vitae mi. Mauris vel libero laoreet, fermentum velit non, eleifend orci. Suspendisse quis tempus lectus, et venenatis risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a velit id turpis auctor rutrum. Donec tempus rutrum pharetra.</p>
+					<h2>{props.name} {props.lastname}</h2>
+					{
+						(props.discription
+						&& props.discription.length > 900
+						&& <p>{props.discription.slice(0, 900)}</p>)
+						|| <p>{props.discription}</p>}
 				</div>
 			</div>
-			<div className="author-search">
-				<input type="text" placeholder='search for blogs' />
-				<button className="search-btn">search</button>
-			</div>
-			<div>
-			</div>
+		</div>
+	)
+}
+
+function AuthorBlogs() {
+
+}
+
+const Author = () => {
+	const {id} = useParams();
+	const {data: author, error, isPending} = useFetch('http://localhost:8000/authors/' + id);
+	const {data: blogs} = useFetch('http://localhost:8000/blogs');
+	let authorBlog;
+	if (blogs) {
+		authorBlog = blogs.filter((blog) => blog.author === author.id)
+	}
+	return (
+		<div>
+			<AuthorComponent {...author} />
+			{blogs && <BlogList blogs={authorBlog} title={`${author.name} ${author.lastname} blogs`} isAuthor={false}/>}
 		</div>
 	);
 }

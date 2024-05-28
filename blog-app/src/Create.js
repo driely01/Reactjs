@@ -1,11 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import useFetch from './useFetch';
 
 const Create = () => {
+	const {data: name} = useFetch('http://localhost:8000/authors');
+	let select;
+	const [author, setAuthor] = useState(null);
+	if (name) {
+		select =  <select
+			value={author}
+			onChange={e => setAuthor(e.target.value)}
+		>
+			{name.map((n, i) => {
+				if (!i && !author)
+					setAuthor(name[i].id);
+				return <option value={n.id} key={n.id}>{n.name}</option>
+			})}
+		</select>;
+	}
 	const [title, setTitle] = useState('');
 	const [body, setBody] = useState('');
-	const [author, setAuthor] = useState('mario');
 	const [isPending, setIsPending] = useState(false);
 	const history = useHistory();
 	const notify = {
@@ -18,21 +33,23 @@ const Create = () => {
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const blog = {title, body, author};
-		setIsPending(true);
-		fetch('http://localhost:8000/blogs', {
-			method: 'POST',
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(blog)
-		})
-		.then((res) => {
-			if (!res.ok)
-				throw Error('ERROR: could not reach the db');
-			toast.success('blog has been added successfully', notify);
-			setIsPending(false);
-			history.push('/');
-		})
-		.catch((err) => toast.error(err.message, notify))
+		if (name) {
+			const blog = {title, body, author};
+			setIsPending(true);
+			fetch('http://localhost:8000/blogs', {
+				method: 'POST',
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(blog)
+			})
+			.then((res) => {
+				if (!res.ok)
+					throw Error('ERROR: could not reach the db');
+				toast.success('blog has been added successfully', notify);
+				setIsPending(false);
+				history.push('/');
+			})
+			.catch((err) => toast.error(err.message, notify))
+		}
 	};
 	return (
 		<div className="create">
@@ -56,14 +73,7 @@ const Create = () => {
 					onChange={e => setBody(e.target.value)}
 				></textarea>
 				<label>Blog Author:</label>
-				<select
-					value={author}
-					onChange={e => setAuthor(e.target.value)}
-				>
-					<option value="mario">mario</option>
-					<option value="yoshi">yoshi</option>
-					<option value="john">john</option>
-				</select>
+				{select}
 				{!isPending && <button>Add Blog</button>}
 				{isPending && <button disabled>Adding Blog...</button>}
 			</form>

@@ -6,10 +6,12 @@ const useFetchBlog = blog => {
 	useEffect(() => {
 		async function getName() {
 			try {
-				const response = await fetch('http://localhost:8000/authors/' + blog.author);
-				const author = await response.json();
-				const name = author.name;
-				setName(name);
+				if (blog.author) {
+					const response = await fetch('http://localhost:8000/authors/' + blog.author);
+					const author = await response.json();
+					const name = author.name;
+					setName(name);
+				}
 			} catch (error) {
 				console.log(error.message);
 			}

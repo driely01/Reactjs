@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import useFetchBlog from "./useFetchBlog";
 
 const BlogD = ({blog, handleDelete}) => {
@@ -10,7 +11,9 @@ const BlogD = ({blog, handleDelete}) => {
 				<div className="right"></div>
 			</div>
 			<p className="blog-body justified">{blog.body}</p>
-			<p className="blog-author right-side"><span className="underline">{name}</span></p>
+			<Link to={`/authors/${blog.author}`}>
+				<p className="blog-author right-side"><span className="underline">{name}</span></p>
+			</Link>
 			<button onClick={handleDelete}>delete blog</button>
 		</article>
 	);

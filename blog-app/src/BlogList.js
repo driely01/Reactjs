@@ -3,9 +3,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Blog from "./Blog";
 
 
-const BlogList = ({blogs, title, handleDelete}) => {
-	// const [name, setName] = useState("")
-
+const BlogList = ({blogs, title, isAuthor}) => {
 	return (
 		<div className="blog-list">
 			<div className="title">
@@ -14,7 +12,7 @@ const BlogList = ({blogs, title, handleDelete}) => {
 			</div>
 			{blogs.map((blog) => (
 
-				<Blog blog={blog} />
+				<Blog blog={blog} isAuthor={isAuthor}  key={blog.id} />
 			))}
 		</div>
 	);
