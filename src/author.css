@@ -1,0 +1,30 @@
+.author {
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	margin-bottom: 40px;
+}
+.profile-container {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+	gap: 20px;
+}
+.profile-container .profile {
+	width: 200px;
+	height: 200px;
+	background-color: black;
+	border-radius: 50%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+.profile-container .author-infos {
+	flex-grow: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-self: center;
+}
+.profile-container .author-infos h2 {
+	margin-bottom: 10px;
+}
